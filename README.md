@@ -486,4 +486,14 @@ job.commit()
 ```
 
 
+# Below is the BOT Code to cleanup the s3 bucket before each load.
 
+import boto3    
+
+s3 = boto3.resource('s3')
+
+bucket = s3.Bucket('<bucket_name>')
+
+bucket.objects.all().delete()
+
+```
